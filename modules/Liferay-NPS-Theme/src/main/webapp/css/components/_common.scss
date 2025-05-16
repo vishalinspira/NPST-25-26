@@ -1,0 +1,321 @@
+// variable define
+$body-bg:#F5F5F5;
+$bg-color1:#2885EA;
+$bg-color2:#014AB0;
+$bg-color3:#FFFFFF;
+$bg-color4:#F7941E;
+$bg-color5:#EAF3FC;
+$bg-color6:#111111;
+$bg-color7:#3589D7;
+$bg-color8:#E9F3FC;
+$color1:#2885EA;
+$color2:#014AB0;
+$color3:#ffffff;
+$color4:#111111;
+$color5:#0E62B1;
+$color6:#797979;
+$border-color1:#ffffff;
+$border-color2:#111111;
+$border-color3:#014AB0;
+$border-color4:#F7941E;
+$border-color5:#C6E2FF;
+$font-size1:20px;
+$font-size2:18px;
+$font-size3:16px;
+$font-size4:14px;
+$font-size5:12px;
+$transition:all 0.5s;
+$font-family: 'Roboto', sans-serif;
+$box-space:112px 0;
+$line-height: 30px;
+
+button{
+    &:focus-visible{
+        outline: none;  
+    }
+}
+
+body{
+    font-family: $font-family;
+    font-size: $font-size3;
+    line-height: $line-height;
+    width: 100%;
+    padding: 0;
+    background-color: $body-bg;
+    transition: $transition;
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: $font-family;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-size: 40px;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 18px;
+}
+h4{
+    font-size: 16px;
+}
+h5{
+    font-size: 14px;
+}
+h6{
+    font-size: 12px;
+}
+a{
+    text-decoration: none;
+    transition: $transition;
+    margin: 0;
+    padding: 0;
+    color: $color4;
+    &:hover, &:focus{
+        color: $bg-color2;
+    }
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.box-space{
+    margin: $box-space;
+}
+
+@mixin gredient1 {
+    background: linear-gradient(90deg, #0E62B1 0%, #3195F3 100%);
+}
+@mixin gredient2 {
+    background: linear-gradient(180deg, #3485D8 0%, #06C6FC 100%);
+}
+@mixin gredient3 {
+    background: linear-gradient(180deg, #F59225 0%, #F9BF3A 100%);
+}
+@mixin gredient4 {
+    background: linear-gradient(180deg, #F37699 0%, #FD8F79 100%);
+}
+@mixin gredient5 {
+    background: linear-gradient(180deg, #06C9E9 0%, #00E5D5 100%);
+}
+@mixin gredient6 {
+    background: linear-gradient(180deg, #3195F3 0%, #0E62B1 100%);
+}
+@mixin bg-style {
+    background-color: $bg-color3;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.common-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 130px;
+    height: 50px;
+    border-radius: 5px;
+    color: $color3;
+    @include gredient1;
+    transition: $transition;
+    text-transform: uppercase;
+    &:hover{
+        @include gredient6;
+        color: $color3;
+    }
+}
+
+/* form scss */
+.nps-input-box{
+    margin-top: 30px;
+    label{
+        font-size: $font-size3;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: $color3;
+    }
+    input{
+        width: 100%;
+        display:inline-block;
+        height: 50px;
+        background-color:rgba(244, 250, 255, 0.10);
+        border: none;
+        border-radius: 3px;
+        padding: 5px 20px;
+        color: $color3;
+        &::placeholder{
+            color: $color3;
+            font-size: $font-size4;
+        }
+        &:focus-visible{
+            outline: none;
+        }
+        
+    }
+    input[type="checkbox"]{
+        width: auto !important;
+    }
+    .nps-input-icon{
+        position: relative;
+        input{
+            width: 100%;
+            display:inline-block;
+            height: 50px;
+            background-color:rgba(244, 250, 255, 0.10);
+            border: none;
+            border-radius: 3px;
+            padding: 5px 60px 5px 60px;
+            color: $color3;
+            &::placeholder{
+                color: $color3;
+                font-size: $font-size4;
+            }
+            &:focus-visible{
+                outline: none;
+            }
+            
+        }
+        span{
+            position: absolute;
+            top: 65px;
+            transform: translateY(-50%);
+            left: 15px;
+        }
+        .toggle-password{
+            right: 25px;
+            color: $color3;
+            position: absolute;
+            top: 65px;
+            transform: translateY(-50%);
+        }
+    }
+    textarea{
+        width: 100%;
+        border-radius: 5px;
+        background-color: $bg-color8;
+        color: $color4;
+        font-size: $font-size4;
+        border: none;
+    }
+}
+.checkbox{
+    position: absolute; 
+    opacity: 0; 
+    & + label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+      }
+      & + label:before {
+        content: '';
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: text-top;
+        width: 20px;
+        height: 20px;
+        background: $bg-color3;
+        border-radius: 3px;
+      }
+      &:hover + label:before {
+        background: $bg-color3;
+      }
+      &:checked + label:before {
+        background: $bg-color3;
+      }
+      &:disabled + label {
+        color: #b8b8b8;
+        cursor: auto;
+      }
+      &:disabled + label:before {
+        box-shadow: none;
+        background: #ddd;
+      }
+      &:checked + label:after {
+        content: '';
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translate(-50%);
+        background: $bg-color2;
+        width: 2px;
+        height: 2px;
+        box-shadow: 
+          2px 0 0 $bg-color2,
+          4px 0 0 $bg-color2,
+          4px -2px 0 $bg-color2,
+          4px -4px 0 $bg-color2,
+          4px -6px 0 $bg-color2,
+          4px -8px 0 $bg-color2;
+        transform: rotate(45deg);
+      }
+ }
+
+/*------ responsive ----*/
+
+@mixin for-1700 {
+	@media (max-width: 1700px) {
+		@content;
+	}
+}
+@mixin for-1440 {
+	@media (max-width: 1440px) {
+		@content;
+	}
+}
+@mixin for-1366 {
+	@media (max-width: 1366px) {
+		@content;
+	}
+}
+@mixin for-1199 {
+	@media (max-width: 1199px) {
+		@content;
+	}
+}
+@mixin for-1024 {
+	@media (max-width: 1024px) {
+		@content;
+	}
+}
+@mixin for-992 {
+	@media (max-width: 992px) {
+		@content;
+	}
+}
+@mixin for-768 {
+	@media (max-width: 768px) {
+		@content;
+	}
+}
+@mixin for-576 {
+	@media (max-width: 576px) {
+		@content;
+	}
+}
+
+@mixin for-480 {
+	@media (max-width: 480px) {
+		@content;
+	}
+}
+@mixin for-375 {
+	@media (max-width: 375px) {
+		@content;
+	}
+}
+@mixin for-320 {
+	@media (max-width: 320px) {
+		@content;
+	}
+}
+

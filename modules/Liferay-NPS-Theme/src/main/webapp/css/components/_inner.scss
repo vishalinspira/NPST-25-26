@@ -1,0 +1,623 @@
+.nps-body-main{
+    .nps-page-main{
+        .nps-report-main{
+            max-width: 420px;
+            background-color: $bg-color3;
+            margin: 10px auto 50px;
+            max-width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 5px;
+            border-radius: 5px;
+            column-gap: 8px;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+            li{
+                a{
+                    display: inline-block;
+                    color: $color4;
+                    font-size: $font-size3;
+                    min-width: 130px;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                    font-weight: 500;
+                    transition: $transition;
+                    border-radius: 5px;
+                    border: none; 
+                    &:hover, &.active{
+                        @include gredient1;
+                        color: $color3;
+                    }
+                }
+            }
+        }
+        &.nps-upload-report{
+            .nps-report{
+                background-color: $bg-color3;
+                box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+                border-radius: 10px;
+                h4{
+                    color: $color4;
+                    padding: 20px 33px 15px;
+                    border-bottom: 1px solid rgba(17, 17, 17, 0.1);
+                }
+                form{
+                    padding: 33px;
+                    label{
+                        color: $color4;
+                        font-size: $font-size4;
+                        line-height: 16px;
+                    }
+                    input{
+                        background-color: $bg-color8;
+                        color: $color4;
+                        border-radius: 5px;
+                        &::placeholder{
+                            color: $color4;
+                        }
+                    }
+                    .common-btn{
+                        text-align: center;
+                        line-height: 50px;
+                    }
+                    .file-upload {
+                        display: block;
+                        .file-select {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            border-radius: 5px;
+                            color: $color4;
+                            cursor: pointer;
+                            height: 50px;
+                            line-height: 40px;
+                            text-align: left;
+                            background: $bg-color8;
+                            overflow: hidden;
+                            position: relative;
+                            .file-select-button {
+                               border-radius: 5px;
+                                font-size: $font-size4;
+                                color: $color3;
+                                margin: 5px;
+                                height: 40px;
+                                @include gredient1;
+                            }
+                            .file-select-name {
+                                font-size: $font-size5;
+                                color: $color4;
+                                padding-left: 15px;
+                                line-height: 16px;
+                            }
+                            input[type="file"] {
+                                z-index: 100;
+                                cursor: pointer;
+                                position: absolute;
+                                height: 100%;
+                                width: 100%;
+                                top: 0;
+                                left: 0;
+                                opacity: 0;
+                                filter: alpha(opacity=0);
+                            }
+                        }
+                        .file-select.file-select-disabled {
+                            opacity: 0.65;
+                            &:hover {
+                                cursor: default;
+                                display: block;
+                                border: 2px solid #dce4ec;
+                                color: #34495e;
+                                cursor: pointer;
+                                height: 40px;
+                                line-height: 40px;
+                                margin-top: 5px;
+                                text-align: left;
+                                background: #ffffff;
+                                overflow: hidden;
+                                position: relative;
+                                .file-select-name {
+                                    line-height: 40px;
+                                    display: inline-block;
+                                    padding: 0 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.pending-table{
+            background-color: $bg-color3;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+            margin: 0 25px;
+            .mydataTable{
+                table{
+                    border: 1px solid $border-color5;
+                    border-radius: 5px;
+                    thead{
+                        @include gredient1;
+                        th{
+                            padding: 17px 30px;
+                            color: $color3;
+                            font-size: $font-size4;
+                            line-height: 16px;
+                            &:first-child{
+                                border-top-left-radius:5px ;
+                            }
+                            &:last-child{
+                                border-top-right-radius:5px ;
+                            }
+                        }
+                    }
+                    tbody{
+                        .odd{
+                            background-color: $bg-color5;
+                        }
+                      td{
+                        padding: 17px 30px;
+                        color: $color4;
+                        font-size: $font-size4;
+                        line-height: 16px;
+                      }
+                    }
+                }
+                .bottom{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    .left{
+                        display: flex;
+                        align-items: center;
+                        column-gap: 10px;
+                        margin-top: 20px;
+                        label{
+                            position: relative;
+                            &:before{
+                                content: '';
+                                width: 8px;
+                                height: 8px;
+                                position: absolute;
+                                right: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                z-index: 2;
+                                transform: rotate(45deg) translateY(-50%);
+                                border: 1px solid $border-color2;
+                                border-left: 0;
+                                border-top: 0;
+                                right: 15px;
+                                top: 42%;
+    
+                            }
+                        }
+                        select{
+                            background-color:$bg-color5;
+                            border: none;
+                            font-weight: 700;
+                            font-size: $font-size4;
+                            position: relative;
+                            &:focus, &:focus-visible{
+                                outline: none;
+                                box-shadow: none;
+                            }
+                        }
+                        .dataTables_info{
+                            padding-top: 0;
+                            font-size: $font-size4;
+                            color: $color4;
+                            font-weight: 500;
+                        }
+                    }
+                    .pagination{
+                        margin-top: 20px;
+                        column-gap: 10px;
+                        flex-wrap: wrap;
+                        row-gap: 20px;
+                        .page-item{
+                            .page-link{
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                height: 40px;
+                                min-width: 40px;
+                                color: #707070;
+                                border: 1px solid #E7E7E7;
+                                border-radius: 5px;
+                                transition: $transition;
+                                text-transform: uppercase;
+                                font-size: $font-size4;
+                                line-height: 16px;
+                                font-weight: 500;
+                                &:hover{
+                                    @include gredient6;
+                                    color: $color3;
+                                }
+                               
+                            }
+                            &.active{
+                                .page-link{
+                                    color: $color3 ;
+                                    @include gredient1;
+                                    &:hover{
+                                        @include gredient6;
+                                        color: $color3;
+                                    }
+                                }
+                            }
+                            &.next{
+                                .page-link{
+                                    min-width: 100px;
+                                    color: $color3 ;
+                                    @include gredient1;
+                                    &:hover{
+                                        @include gredient6;
+                                        color: $color3;
+                                    }
+                                }
+                            }
+                            &.disabled{
+                                min-width: 100px;
+                                color: $color4;
+                                background-color: $bg-color5;
+                                border-color: #C6E2FF;
+                            }
+                        }
+                       
+                    }
+                }
+            }
+        }
+        &.calendar-main{
+           #calendar{
+            background-color: $bg-color3;
+            box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.07);
+            border-radius: 10px;
+            padding: 20px 30px;
+            .fc-state-default{
+                height: 50px;
+                width: 50px;
+                margin-left: 7px;
+                border-radius: 5px;
+                @include gredient1;
+                color: $color3;
+                border: none;
+                transition: $transition;
+                &:hover{
+                    @include gredient6;
+                    color: $color3;
+                }
+            }
+            .fc-day-header{
+                height: 45px;
+                max-width: 100px;
+                line-height: 45px;
+                font-size: $font-size5;
+                color: #272526;
+                background-color: $bg-color5;
+                transition: all 0.5;
+                &:hover{
+                    color: $color5;
+                }
+                &.fc-sun, &.fc-sat{
+                    @include gredient1;
+                    color: $color3;
+                    &:hover{
+                        @include gredient6;
+                        color: $color3;
+                    }
+                }
+            }
+            .fc-sat{
+                color: $color5;
+                font-weight: 700;
+            }
+            
+           }
+           .fc th, .fc td {
+            border-width: 0px;
+            }
+            .fc tbody td {
+                border-width: 1px !important;
+            }
+            .fc-toolbar {
+                .fc-left{
+                    margin-top: 15px;
+                }
+            }
+            .fc-unthemed {
+                .fc-today{
+                    background-color: $bg-color5;
+                    color: $color5;
+                }
+            }
+        }
+    }
+}
+@include for-768{
+    .nps-body-main {
+        .nps-page-main.pending-table {
+            .mydataTable {
+                .bottom{
+                    flex-direction: column;
+                    row-gap: 20px;
+                }
+            }
+        }
+    }
+}
+@include for-480{
+    .nps-dashboard-wrapper {
+        .nps-main-content {
+            .nps-body-main {
+                .nps-page-main {
+                    padding: 20px 15px;
+                    .nps-report-main{
+                        width: 100%;
+                        li{
+                            a{
+                                min-width: 80px;
+                                height: 40px;
+                                line-height: 40px;
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                    .nps-report {
+                        h4{
+                            font-size: 14px;
+                            padding: 20px 15px 15px;
+                        }
+                        form{
+                            padding: 20px 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .nps-body-main {
+        .nps-page-main.calendar-main {
+            #calendar{
+                padding: 20px 15px;
+            }
+        }
+    }
+    .fc-left{
+        h2{
+            font-size: 16px !important;
+        }
+    }
+}
+
+
+ 
+.paginate_button.disabled {    
+    border-color: #c6e2ff;
+    padding: 10px 25px;
+    height: 40px;
+    min-width: 40px;
+    color: #707070;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;     
+    text-decoration: none;
+}
+
+.paginate_button.current {     
+    background: linear-gradient(90deg, #0E62B1 0%, #3195F3 100%);
+    padding: 10px 15px;
+    height: 40px;
+    min-width: 40px;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin: 0px 5px;
+    text-decoration: none;
+}
+
+.paginate_button {     
+    border-color: #c6e2ff;
+    padding: 10px 15px;
+    height: 40px;
+    min-width: 40px;
+    color: #707070;
+    border: 1px solid #e7e7e7;
+    border-radius: 5px;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin: 0px 5px;
+    text-decoration: none;
+}
+
+.paginate_button.next {     
+    background: linear-gradient(90deg, #0E62B1 0%, #3195F3 100%);
+    padding: 10px 15px;
+    height: 40px;
+    min-width: 40px;
+    color: #fff;
+    border-radius: 5px;
+    transition: all 0.5s;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 500;
+    margin: 0px 5px;
+    text-decoration: none;
+}
+
+.nps-body-main .nps-page-main.pending-table .mydataTable .bottom .left label:before {
+	content: none !important;
+}
+
+.nps-page-main table a {
+    font-weight: 500;
+    text-decoration: underline;
+    color: #3163b4;
+}
+
+.nps-breadcrumbs nav .breadcrumb {
+	background: transparent;
+	padding: 0px 1rem !important;
+}
+
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .portlet-icon-back {     
+    border: none;
+    color: #fff;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .main-content-card {
+    box-shadow: 0 0 10px #ddd;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .panel-group .panel-title {
+    font-size: 14px;
+    font-weight: 600;     
+    color: #fff;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .task-content-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .task-content-author {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .taglib-asset-metadata .metadata-author {
+    font-size: 11px;
+    font-weight: 500 !important;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .task-activity {
+    padding: 0px;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .task-activity .table {
+    margin-bottom: 0px;
+    display: inline-table !important;
+    font-size: 11px;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .control-label {
+    font-weight: 700;
+}
+
+#Content .panel-body {
+    padding-left: 0;
+}
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .panel-title .collapse-icon {
+    background: #4384dd;
+    color: #fff;
+    text-decoration: none;
+}
+ 
+
+#portlet_com_liferay_portal_workflow_task_web_portlet_MyWorkflowTaskPortlet .task-content-actions {
+    display: none;
+}
+
+.rp_count {
+    z-index: 1 !important;
+    min-width: 25px !important;
+    height: 27px !important;
+}
+
+.count {
+	color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+text.highcharts-credits {
+    display: none;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+    padding: 5px;     
+    background-color: #e9f3fc;
+    color: #000;
+    border-radius: 5px;
+    border: none;
+}
+
+/*New UI Modifications*/
+table {
+	width: 100%;
+	table-layout: fixed;		
+}
+
+.back_btn {
+    background: linear-gradient(90deg,#0e62b1 0%,#3195f3 100%);
+    color: #fff;
+    display: inline;
+    border-radius: 50px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.back_btn a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nps-body-main .modal-dialog {
+    -webkit-transform: translate(0,-50%);
+    -o-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+    top: 30%;
+    margin: 0 auto;
+}
+.animaion {
+  position: fixed;
+  z-index: 999;
+  height: 2em;
+  width: 2em;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+} 
+.animaion:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0d0d1c;
+}
+
+textarea {
+    overflow: auto;
+    resize: none;
+}
+
+.tab_active_btn {
+	cursor: default !important;
+}

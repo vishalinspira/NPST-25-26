@@ -1,0 +1,75 @@
+.average_tabs {
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 9px 10px #ddd;
+    padding: 10px;
+    position: relative;
+    #pills-tab {
+        border-bottom: 1px solid #ddd;
+        .nav-link.active {
+            background-color: #f7941d;
+            color: #fff !important;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            font-weight: 600;
+            img {
+                width: 20px;
+                vertical-align: sub;
+                filter: invert(1);
+            }
+        }
+        .nav-link {
+            font-weight: 600;
+            img {
+                width: 20px;
+                vertical-align: sub;
+            }
+        }
+    }
+    .card-header {
+        img {
+            width: 20px;
+            vertical-align: sub;
+        }
+    }
+}
+
+.card_blocks .page_title img {
+    width: 60px !important;
+    vertical-align: middle !important;
+}
+
+.upload-btn {
+    margin: -5px;
+}
+
+.dataTables_length {
+	margin-top: 5px;
+}
+
+a.icon-monospaced {
+    display: none !important;
+}
+
+.filter-white {
+	filter: brightness(15);
+}
+
+.dashboard_block a.text-decoration-none:hover img {
+    filter: brightness(0.7);
+}
+
+.dashboard_block .card img {
+    width: 60px;
+}
+
+.dashboard_block .card h6 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.card_blocks .count {
+	font-size: 12px;
+}
