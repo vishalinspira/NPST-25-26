@@ -1107,7 +1107,7 @@ public class FormsPdfCreationUtil {
 			   
 			    String[] cellContent28 =	{"2.5","Whether investment in any equity shares through IPO/FPO/OFS does not fulfil the market capitalization condition prescribed under investment guidelines post listing.Details provided in Annexure G.",mnCompCertificate.getActive_passive_breaches(),mnCompCertificate.getSecurities_held_2_6_2(),mnCompCertificateScrutiny.getActive_passive_breaches_rem()};
 			    if(checkboxvalues.contains("2.5b")) {
-			    	table2=addRow(table2, 5, cellContent27);
+			    	table2=addRow(table2, 5, cellContent28);
 			    }
 			    
 //			    for (int row = 0; row < 7; row++) {
