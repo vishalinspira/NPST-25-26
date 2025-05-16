@@ -1,0 +1,17 @@
+package Compliance_certificate_at_quarterly_interval.constants;
+
+/**
+ * @author peerv
+ */
+public class Compliance_certificate_at_quarterly_intervalPortletKeys {
+
+	public static final String COMPLIANCE_CERTIFICATE_AT_QUARTERLY_INTERVAL =
+		"Compliance_certificate_at_quarterly_interval_Compliance_certificate_at_quarterly_intervalPortlet";
+
+
+	public static final String COMPLIANCE_CERTIFICATE_AT_QUARTERLY_INTERVAL_SCR =
+		"Compliance_certificate_at_quarterly_interval_Compliance_certificate_at_quarterly_intervalPortlet_scr";
+	public static final String input_quarterly_intervalPortletKeys="input_quarterly_intervalPortletKeys";
+	public static final String COMPLIANCE_CERTIFICATE_AT_QUARTERLY_INTERVAL_PDF_GENERATE="/compliance_certificate_at_quarterly_interval/pdf_generate";
+	public static final String input_quarterly_intervalPortletKeysScr="input_quarterly_intervalPortletKeysscr";
+}
