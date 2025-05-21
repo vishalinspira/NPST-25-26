@@ -1,10 +1,14 @@
 package com.quarterly.stewardship.report.asset;
 
 import com.daily.average.service.model.QtrStewardshipReport;
+import com.daily.average.service.model.QtrStewardshipReportScrutiny;
 import com.daily.average.service.model.ReportMaster;
 import com.daily.average.service.model.ReportUploadFileLog;
+import com.daily.average.service.model.ReportUploadLog;
+import com.daily.average.service.service.QtrStewardshipReportScrutinyLocalServiceUtil;
 import com.daily.average.service.service.ReportMasterLocalServiceUtil;
 import com.daily.average.service.service.ReportUploadFileLogLocalServiceUtil;
+import com.daily.average.service.service.ReportUploadLogLocalServiceUtil;
 import com.liferay.asset.kernel.model.BaseJSPAssetRenderer;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -94,6 +98,7 @@ public class QuarterlyStewardshipReportAssetRender extends BaseJSPAssetRenderer<
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy hh:mm a");
 		
 		String reportName = "NA";
+		String reportDate ="dd/MM/yyyy hh:mm";
 		String uploadDate = "dd/MM/yyyy hh:mm";
 		String Annexure_aURL="";
 		String Annexure_b_iURL="";
@@ -110,12 +115,19 @@ public class QuarterlyStewardshipReportAssetRender extends BaseJSPAssetRenderer<
 				//ReportUploadLog reportUploadLog = reportUploadLogLocalService.fetchReportUploadLog(reportUploadLogId);
 				if(reportUploadLogId!=null)
 					try {
+			
+						ReportUploadLog reportUploadLog = ReportUploadLogLocalServiceUtil.fetchReportUploadLog(reportUploadLogId);
 						reportUploadFileLogs = ReportUploadFileLogLocalServiceUtil.findByReportUploadLogId(reportUploadLogId);
 						Annexure_aURL=StewardshipRepDocumentUtil.getDocumentURL(qtrStewardshipReport.getAnnexure_a());
 						Annexure_b_iURL=StewardshipRepDocumentUtil.getDocumentURL(qtrStewardshipReport.getAnnexure_b_i());
 						Annexure_b_iiURL=StewardshipRepDocumentUtil.getDocumentURL(qtrStewardshipReport.getAnnexure_b_ii());
 						Annexure_cURL=StewardshipRepDocumentUtil.getDocumentURL(qtrStewardshipReport.getAnnexure_c());
 						httpServletRequest.setAttribute("reportUploadLogId", reportUploadLogId);
+						
+						reportDate=dateFormat.format(reportUploadLog.getReportDate());
+						
+						_log.info("original reportdate"+reportUploadLog.getReportDate()+" after changes "+ reportDate);
+						
 					} catch (Exception e) {
 						_log.error(e);
 					}
@@ -127,6 +139,18 @@ public class QuarterlyStewardshipReportAssetRender extends BaseJSPAssetRenderer<
 					_log.error("Exception on getting report file name : "+e.getMessage());
 				}
 				uploadDate = dateFormat.format(qtrStewardshipReport.getCreatedon());
+				try {
+					QtrStewardshipReportScrutiny qtrStewardshipReportScrutiny=null;
+					List<QtrStewardshipReportScrutiny> qtrStewardshipReportScrutinies=	QtrStewardshipReportScrutinyLocalServiceUtil.findQtrStewardshipReportScrutinyByReportUploadLogId(reportUploadLogId);
+				if(qtrStewardshipReportScrutinies!= null || Validator.isNotNull(qtrStewardshipReportScrutinies)) {
+					//qtrStewardshipReportScrutiny=qtrStewardshipReportScrutinies.get(0);
+					
+					qtrStewardshipReportScrutiny=qtrStewardshipReportScrutinies.get(qtrStewardshipReportScrutinies.size()-1);
+					httpServletRequest.setAttribute("qtrstewardshipscrutiny", qtrStewardshipReportScrutiny);
+				}
+				}catch (Exception e) {
+					_log.error(e);
+				}
 			}
 			QuartelyStewardshipReportUtil quartelyStewardshipReportUtil =  new QuartelyStewardshipReportUtil();
 			isNonNPSUser = quartelyStewardshipReportUtil.isNonNpsUser(themeDisplay.getUserId());
@@ -135,6 +159,7 @@ public class QuarterlyStewardshipReportAssetRender extends BaseJSPAssetRenderer<
 		}
 		
 		httpServletRequest.setAttribute("reportName", reportName);
+		httpServletRequest.setAttribute("reportDate", reportDate);
 		httpServletRequest.setAttribute("uploadDate", uploadDate);
 		httpServletRequest.setAttribute("reportUploadFileLogs", reportUploadFileLogs);
 		httpServletRequest.setAttribute("qtrStewardshipReport", qtrStewardshipReport);

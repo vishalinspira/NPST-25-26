@@ -1,5 +1,6 @@
 package com.quarterly.stewardship.report.scrutiny;
 
+import com.daily.average.service.model.QtrStewardshipReportScrutiny;
 import com.daily.average.service.service.QtrStewardshipReportScrutinyLocalService;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
@@ -12,6 +13,7 @@ import com.quarterly.stewardship.report.constants.QuarterlyStewardshipReportPort
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.List;
 
 import javax.portlet.PortletException;
 import javax.portlet.ResourceRequest;
@@ -47,6 +49,10 @@ public class SaveQuarterlyStewardshipReportScrutiny implements MVCResourceComman
 		String annexureB_II_rem = ParamUtil.getString(resourceRequest, "annexureB_II_rem");
 		String annexureC_rem = ParamUtil.getString(resourceRequest, "annexureC_rem");
 		
+		
+		
+		
+		
 		long reportUploadLogId = ParamUtil.getLong(resourceRequest, "reportUploadLogId");
 		
 		//double version = ParamUtil.getDouble(resourceRequest, "version");
@@ -55,14 +61,18 @@ public class SaveQuarterlyStewardshipReportScrutiny implements MVCResourceComman
 		
 		boolean isError = false;
 		
+		// List<QtrStewardshipReportScrutiny> QtrStewardship = qtrStewardshipReportScrutinyLocalService.findQtrStewardshipReportScrutinyByReportUploadLogId(0);
 		try {
+			
+			_log.info("conflict_rem " + conflict_rem + "monitoring_rem "+monitoring_rem + "resolutions_rem "+resolutions_rem+"insInvestorSituation_rem "+insInvestorSituation_rem + "resolutionsVoted1_rem "+resolutionsVoted1_rem);
 			qtrStewardshipReportScrutinyLocalService.saveQtrStewardshipReportScrutiny(themeDisplay.getUser().getFullName(), 0, 
 					themeDisplay.getUserId(), conflict_rem, monitoring_rem, 
-					resolutions_rem, annexureA_rem, annexureB_I_rem, resolutionsVoted1_rem, adversealert_rem, insInvestorSituation_rem,
+					resolutions_rem,resolutionsVoted1_rem, adversealert_rem,insInvestorSituation_rem, annexureA_rem, annexureB_I_rem,
 					annexureB_II_rem, annexureC_rem, new Date(), themeDisplay.getUserId(), reportUploadLogId);
+			
 		} catch (Exception e) {
 			isError = true;
-			_log.error(e.getMessage(), e);
+			_log.error(e);
 		}
 		
 		
@@ -77,6 +87,7 @@ public class SaveQuarterlyStewardshipReportScrutiny implements MVCResourceComman
 		}
 		
 		return false;
+		
 	}
 	
 	@Reference

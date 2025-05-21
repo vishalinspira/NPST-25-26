@@ -95,6 +95,7 @@ public class QtrlyStewardshipReport extends BaseMVCResourceCommand {
 		
 		String resolutionsVoted1 = ParamUtil.getString(resourceRequest, "resolutionsVoted1");
 		String adversealert = ParamUtil.getString(resourceRequest, "adversealert");
+		
 		String insInvestorSituation = ParamUtil.getString(resourceRequest, "insInvestorSituation");
 		
 		String resolutionsVotedRem1 = ParamUtil.getString(resourceRequest,"resolutionsVoted_rem1");
@@ -122,6 +123,7 @@ public class QtrlyStewardshipReport extends BaseMVCResourceCommand {
 		long reportMasterId = ParamUtil.getLong(resourceRequest, "reportMasterId");
 		long createdBy = themeDisplay.getUserId();
 		
+		
 		String dDate[]=dateFormat.format(reportDate).split("-");
 
 		int month=Integer.parseInt(dDate[1]);
@@ -133,6 +135,8 @@ public class QtrlyStewardshipReport extends BaseMVCResourceCommand {
 			month=month-1;	
 		}
 		String formDate1=month+"/"+year;
+		
+
 		
 		long pdf_file_fileEntryId = 0l;
 		
