@@ -52,7 +52,6 @@ import org.osgi.service.component.annotations.Reference;
 import AnnexureForCustodian.constants.AnnexureForCustodianPortletKeys;
 import AnnexureForCustodian.util.AnnexureForCustodianUtil;
 import AnnexureForCustodian.util.DocumentUploadUtil;
-import AnnexureForCustodian.util.ValidateFileName;
 import AnnexureForCustodian.util.ValidateSheetName;
 import nps.common.service.util.CommonParser;
 import nps.email.api.api.ExcelValidationAn10Api;
@@ -133,7 +132,7 @@ public class SaveAnnexureForCustodianFile implements MVCResourceCommand{
 			DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
 			
 			decimalFormat.setParseBigDecimal(true);
-			if(ValidateFileName.isValidfile(filename)) {
+			
 			if(null != file) {
 				
 				resultJsonObject = excelValidationAn10Api.validateExcelFile(file, resourceRequest);
@@ -276,11 +275,6 @@ public class SaveAnnexureForCustodianFile implements MVCResourceCommand{
 				}
 				
 			}
-		}else {
-				resultJsonObject.put("status", false);
-				resultJsonObject.put("msg","Please upload files with a valid filename.");
-				//return resultJsonObject;
-			}
 		} catch (Exception e) {
 			_log.error(e);
 		}
@@ -329,10 +323,10 @@ public class SaveAnnexureForCustodianFile implements MVCResourceCommand{
 					qafc.setNsccl_ccil_charges((BigDecimal) decimalFormat.parse(row.getCell(3).toString().trim() == "" ? "0" : row.getCell(3).toString().trim()));
 					qafc.setSebi_charges((BigDecimal) decimalFormat.parse(row.getCell(4).toString().trim() == "" ? "0" : row.getCell(4).toString().trim()));
 					//qafc.setGross_bill_as_per_pf((BigDecimal) decimalFormat.parse(String.valueOf(row.getCell(5).getNumericCellValue())));
-					qafc.setBill_value_excluding_gst((BigDecimal) decimalFormat.parse(row.getCell(5).toString().trim() == "" ? "0" : row.getCell(6).toString().trim()));
-					qafc.setCgst((BigDecimal) decimalFormat.parse(row.getCell(7).toString().trim() == "" ? "0" : row.getCell(6).toString().trim()));
-					qafc.setSgst((BigDecimal) decimalFormat.parse(row.getCell(8).toString().trim() == "" ? "0" : row.getCell(7).toString().trim()));
-					qafc.setBill_value_including_gst((BigDecimal) decimalFormat.parse(row.getCell(8).toString().trim() == "" ? "0" : row.getCell(9).toString().trim()));
+					qafc.setBill_value_excluding_gst((BigDecimal) decimalFormat.parse(row.getCell(5).toString().trim() == "" ? "0" : row.getCell(5).toString().trim()));
+					qafc.setCgst((BigDecimal) decimalFormat.parse(row.getCell(6).toString().trim() == "" ? "0" : row.getCell(6).toString().trim()));
+					qafc.setSgst((BigDecimal) decimalFormat.parse(row.getCell(7).toString().trim() == "" ? "0" : row.getCell(7).toString().trim()));
+					qafc.setBill_value_including_gst((BigDecimal) decimalFormat.parse(row.getCell(8).toString().trim() == "" ? "0" : row.getCell(8).toString().trim()));
 				} catch (Exception e) {
 					_log.info("error parsing long"+e);
 					resultJsonObject.put("status", false);
