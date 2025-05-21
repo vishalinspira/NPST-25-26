@@ -470,7 +470,7 @@ String formDate1="0";
         		<div class="row">
         			<div class="col-md-5">
                         <div class="form-group">
-                          <input type="checkbox" class="pdfbox"  name="pdfbox"  value="2.5b"> 
+                          <input type="checkbox" class="pdfbox"  name="pdfbox"  value="2.6a"> 
                             <p><strong>2.6</strong>  Whether the Pension Fund has segregated the deviations/breaches into active and passive as per PFRDA Circular No. PFRDA/2022/04/SUP-PF/01 dated 04.02.2022 and regularized the active breaches/deviations immediately within 3 business days from the date of active deviation happened.
                      </p>
                      <p>Details provided in Annexure H.</p>
