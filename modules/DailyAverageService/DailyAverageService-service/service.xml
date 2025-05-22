@@ -578,7 +578,7 @@
     
     <entity name="ReportDebit" data-source="extDataSource" local-service="true" remote-service="false" table="weekly_repo_debt">
     	<column type="long" name="id" primary="true"></column>
-    	 <column name="date" type="Date" ></column> 
+    	<!--  <column name="date" type="Date" ></column>  -->
         <column name="fin" type="String"></column>
      	<column name="scheme" type="String"></column>
      	<column name="company_name" type="String" ></column>
@@ -607,7 +607,7 @@
     
     <entity name="ReportEquity" data-source="extDataSource" local-service="true" remote-service="false" table="weekly_repo_eq">
     	<column type="long" name="id" primary="true"></column>
-    	<column name="date" type="Date" ></column> 
+    <!-- <column name="date" type="Date" ></column>  -->	
         <column name="fin" type="String"></column>
      	<column name="scheme" type="String"></column>
      	<column name="company_name" type="String" ></column>

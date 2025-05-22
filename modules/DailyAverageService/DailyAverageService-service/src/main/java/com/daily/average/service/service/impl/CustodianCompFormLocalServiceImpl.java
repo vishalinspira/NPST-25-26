@@ -67,6 +67,7 @@ public class CustodianCompFormLocalServiceImpl
 			String employeeName, String designation, String date_3, String place, long reportUploadLogId, long qcfile_id) {
 		CustodianCompForm custodianCompForm = CustodianCompFormLocalServiceUtil.fetchCustodianCompForm(reportUploadLogId);
 		_log.info("addCustodianCompForm::" + custodianCompForm);
+		
 		if(custodianCompForm == null) {
 			custodianCompForm =  custodianCompFormPersistence.create(reportUploadLogId);
 		}

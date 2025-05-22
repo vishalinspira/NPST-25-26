@@ -38,7 +38,7 @@ public class CustodianCompFormScrutinyLocalServiceImpl
 			String Observe_v, String Observe_vi, String Observe_vii, String Observe_viii, String Observe_ix, String Observe_x, String Observe_xi, String Observe_xii, String Observe_xiii,
 			String Observe_xiv,String Observe_xv,String Observe_xvi,String Observe_xvii,String Observe_xviii) {
 		
-		CustodianCompFormScrutiny custodianCompFormScrutiny = custodianCompFormScrutinyPersistence.create(CounterLocalServiceUtil.increment(CustodianCompFormScrutiny.class.getName()));
+		 CustodianCompFormScrutiny custodianCompFormScrutiny = custodianCompFormScrutinyPersistence.create(CounterLocalServiceUtil.increment(CustodianCompFormScrutiny.class.getName()));
 		
 		custodianCompFormScrutiny.setReportUploadLogId(reportUploadLogId);
 		custodianCompFormScrutiny.setObserve_i_i(observe_i_i);

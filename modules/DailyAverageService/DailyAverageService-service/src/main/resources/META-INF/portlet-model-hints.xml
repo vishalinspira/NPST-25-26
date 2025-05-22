@@ -2947,7 +2947,6 @@
 	</model>
 	<model name="com.daily.average.service.model.ReportDebit">
 		<field name="id" type="long" />
-		<field name="date" type="Date" />
 		<field name="fin" type="String" />
 		<field name="scheme" type="String" />
 		<field name="company_name" type="String" />
@@ -2971,7 +2970,6 @@
 	</model>
 	<model name="com.daily.average.service.model.ReportEquity">
 		<field name="id" type="long" />
-		<field name="date" type="Date" />
 		<field name="fin" type="String" />
 		<field name="scheme" type="String" />
 		<field name="company_name" type="String" />
