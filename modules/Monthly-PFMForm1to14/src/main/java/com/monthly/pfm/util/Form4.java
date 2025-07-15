@@ -303,16 +303,17 @@ private static Log _log = LogFactoryUtil.getLog(Form4.class);
 		resultJsonObject.put("status", true);
 		try {
 			if (file != null) {
+				
 				OPCPackage pkg = OPCPackage.open(file);
 				workbook = new XSSFWorkbook(pkg);
-				XSSFSheet sheet = workbook.getSheet("Form 4 NPS LITE");
+				XSSFSheet sheet = workbook.getSheet("Form 2 NPS LITE");
 				Iterator<Row> rows = sheet.rowIterator();
 				int rowCount = 1;
 				int errorRowCount = 2;
 				
 				rowloop:
 				while (rows.hasNext()) {
-					//_log.info("Inside while");
+				
 					MnForm4_NpsLite form4NpsLite = MnForm4_NpsLiteLocalServiceUtil.
 							createMnForm4_NpsLite(CounterLocalServiceUtil.increment(MnForm4_NpsLite.class.getName()));
 					
@@ -409,10 +410,12 @@ private static Log _log = LogFactoryUtil.getLog(Form4.class);
 							XSSFCell cellError = errorRow.createCell(errorObj.getInt("cellno"));
 							cellError.setCellValue(errorObj.getString("msg"));
 							isexcelhaserror = true;
+							
 						} else if (rowCount > 1) {
 							JSONObject jsonObject = JSONFactoryUtil.createJSONObject(form4NpsLite.toString());
 							form4NpsLiteJsonArray.put(jsonObject);
 							form4NpsLiteList.add(form4NpsLite);
+					
 						}
 						rowCount++;
 					}
