@@ -524,6 +524,8 @@ public class ReportsMigrationScheduler extends BaseMessageListener {
 			addCRAAM();	
 		}catch (Exception e) {
 			LOG.error(e.getMessage());
+		}finally {
+			System.gc();
 		}
 		
 		}
