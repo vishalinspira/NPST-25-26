@@ -196,11 +196,11 @@
                      </div>
                   </div>
                    <div class="col-md-2">
-                    <textarea class="form-control" id="conflict_rem1"  placeholder="Remarks if any" name="conflict_rem1" ><%=stewardshipDetails.getConflict_rem1() == null ? "" : stewardshipDetails.getConflict_rem1()%></textarea>
+                    <textarea class="form-control" id="conflict_rem1"  placeholder="Remarks if any" name="conflict_rem1" <%=isNonNPSUser ? "": "disabled" %>><%=stewardshipDetails.getConflict_rem1() == null ? "" : stewardshipDetails.getConflict_rem1()%></textarea>
                  </div> 
                    <div class="col-md-2">
                     <div class="form-group">
-                    	<textarea class="form-control" id="conflict_rem"  placeholder="Remarks if any" name="conflict_rem" ><%=qrscrutinystewardshipDetails.getConflict_of_interest_rem() == null ? "" : qrscrutinystewardshipDetails.getConflict_of_interest_rem()%></textarea>
+                    	<textarea class="form-control" id="conflict_rem"  placeholder="Remarks if any" name="conflict_rem" <%=isNonNPSUser ? "disabled": "" %>><%=qrscrutinystewardshipDetails.getConflict_of_interest_rem() == null ? "" : qrscrutinystewardshipDetails.getConflict_of_interest_rem()%></textarea>
                     </div>
                  </div> 
                   
@@ -231,11 +231,11 @@
                      </div>
                   </div>
                   <div class="col-md-2">
-                    <textarea class="form-control" id="monitoring_rem1" placeholder="Remarks if any" name="monitoring_rem1" ><%=stewardshipDetails.getMonitoring_rem1() == null ? "" : stewardshipDetails.getMonitoring_rem1()%></textarea>
+                    <textarea class="form-control" id="monitoring_rem1" placeholder="Remarks if any" name="monitoring_rem1" <%=isNonNPSUser ? "": "disabled" %> ><%=stewardshipDetails.getMonitoring_rem1() == null ? "" : stewardshipDetails.getMonitoring_rem1()%></textarea>
                  </div>
                   <div class="col-md-2">
                     <div class="form-group">
-                    	<textarea class="form-control" id="monitoring_rem"  placeholder="Remarks if any" name="monitoring_rem" ><%=qrscrutinystewardshipDetails.getMonitoring_situation_rem() == null ? "" : qrscrutinystewardshipDetails.getMonitoring_situation_rem()%></textarea>
+                    	<textarea class="form-control" id="monitoring_rem"  placeholder="Remarks if any" name="monitoring_rem" <%=isNonNPSUser ? "disabled": "" %>><%=qrscrutinystewardshipDetails.getMonitoring_situation_rem() == null ? "" : qrscrutinystewardshipDetails.getMonitoring_situation_rem()%></textarea>
                     </div>
                  </div> 
                </div>
@@ -265,11 +265,11 @@
                      </div>
                   </div>
                   <div class="col-md-2">
-                    <textarea class="form-control" id="resolutions_rem1"  placeholder="Remarks if any" name="resolutions_rem1" ><%=stewardshipDetails.getResolutions_rem1() == null ? "" : stewardshipDetails.getResolutions_rem1()%></textarea>
+                    <textarea class="form-control" id="resolutions_rem1"  placeholder="Remarks if any" name="resolutions_rem1" <%=isNonNPSUser ? "": "disabled" %>><%=stewardshipDetails.getResolutions_rem1() == null ? "" : stewardshipDetails.getResolutions_rem1()%></textarea>
                  </div>
                  <div class="col-md-2">
                     <div class="form-group">
-                    	<textarea class="form-control" id="resolutions_rem"  placeholder="Remarks if any" name="resolutions_rem" ><%=qrscrutinystewardshipDetails.getResolutions_voted_rem() == null ? "" : qrscrutinystewardshipDetails.getResolutions_voted_rem()%></textarea>
+                    	<textarea class="form-control" id="resolutions_rem"  placeholder="Remarks if any" name="resolutions_rem" <%=isNonNPSUser ? "disabled": "" %>><%=qrscrutinystewardshipDetails.getResolutions_voted_rem() == null ? "" : qrscrutinystewardshipDetails.getResolutions_voted_rem()%></textarea>
                     </div>
                  </div> 
                </div>
@@ -307,11 +307,11 @@
                   </div>
                   
                   <div class="col-md-2">
-                    <textarea class="form-control" id="insInvestorSituation_rem1" placeholder="Remarks if any" name="insInvestorSituation_rem1"><%=stewardshipDetails.getInsInvestorSituation_rem1() == null ? "" : stewardshipDetails.getInsInvestorSituation_rem1()%></textarea>
+                    <textarea class="form-control" id="insInvestorSituation_rem1" placeholder="Remarks if any" name="insInvestorSituation_rem1" <%=isNonNPSUser ? "": "disabled" %>><%=stewardshipDetails.getInsInvestorSituation_rem1() == null ? "" : stewardshipDetails.getInsInvestorSituation_rem1()%></textarea>
                  </div> 
                   
                   <div class="col-md-2">
-                    <textarea class="form-control" id="insInvestorSituation_rem" placeholder="Remarks if any" name="insInvestorSituation_rem"><%=qrscrutinystewardshipDetails.getInsInvestorSituation_rem() == null ? "" : qrscrutinystewardshipDetails.getInsInvestorSituation_rem()%></textarea>
+                    <textarea class="form-control" id="insInvestorSituation_rem" placeholder="Remarks if any" name="insInvestorSituation_rem" <%=isNonNPSUser ? "disabled": "" %>><%=qrscrutinystewardshipDetails.getInsInvestorSituation_rem() == null ? "" : qrscrutinystewardshipDetails.getInsInvestorSituation_rem()%></textarea>
                  </div>  
                  
                </div>
@@ -354,11 +354,11 @@
                   </div>
                   
                   <div class="col-md-2">
-                    <textarea class="form-control" id="adversealert_rem1" placeholder="Remarks if any" name="adversealert_rem1"><%=stewardshipDetails.getAdversealert_rem1() == null ? "" : stewardshipDetails.getAdversealert_rem1()%></textarea>
+                    <textarea class="form-control" id="adversealert_rem1" placeholder="Remarks if any" name="adversealert_rem1" <%=isNonNPSUser ? "": "disabled" %>><%=stewardshipDetails.getAdversealert_rem1() == null ? "" : stewardshipDetails.getAdversealert_rem1()%></textarea>
                  </div> 
                   
                   <div class="col-md-2">
-                    <textarea class="form-control" id="adversealert_rem"  placeholder="Remarks if any" name="adversealert_rem"><%=qrscrutinystewardshipDetails.getAdversealert_rem() == null ? "" : qrscrutinystewardshipDetails.getAdversealert_rem()%></textarea>
+                    <textarea class="form-control" id="adversealert_rem"  placeholder="Remarks if any" name="adversealert_rem" <%=isNonNPSUser ? "disabled": "" %>><%=qrscrutinystewardshipDetails.getAdversealert_rem() == null ? "" : qrscrutinystewardshipDetails.getAdversealert_rem()%></textarea>
                  </div>  
                  
                </div>
@@ -404,11 +404,11 @@
                   </div>
                   
                   <div class="col-md-2">
-                    <textarea class="form-control" id="resolutionsVoted1_rem1" placeholder="Remarks if any" name="resolutionsVoted1_rem1"><%=stewardshipDetails.getResolutionsVoted1_rem1() == null ? "" : stewardshipDetails.getResolutionsVoted1_rem1()%></textarea>
+                    <textarea class="form-control" id="resolutionsVoted1_rem1" placeholder="Remarks if any" name="resolutionsVoted1_rem1" <%=isNonNPSUser ? "": "disabled" %>><%=stewardshipDetails.getResolutionsVoted1_rem1() == null ? "" : stewardshipDetails.getResolutionsVoted1_rem1()%></textarea>
                  </div> 
                   
                   <div class="col-md-2">
-                    <textarea class="form-control" id="resolutionsVoted1_rem"  placeholder="Remarks if any" name="resolutionsVoted1_rem"><%=qrscrutinystewardshipDetails.getResolutionsVoted1_rem() == null ? "" : qrscrutinystewardshipDetails.getResolutionsVoted1_rem()%></textarea>
+                    <textarea class="form-control" id="resolutionsVoted1_rem"  placeholder="Remarks if any" name="resolutionsVoted1_rem" <%=isNonNPSUser ? "disabled": "" %>><%=qrscrutinystewardshipDetails.getResolutionsVoted1_rem() == null ? "" : qrscrutinystewardshipDetails.getResolutionsVoted1_rem()%></textarea>
                  </div>  
                  
                </div>

@@ -1757,7 +1757,7 @@ button[disabled], button[disabled]:hover, input[type=button]:disabled {
 </style>
 
 <script type="text/javascript">
-<%--
+
 var SDWebServerUrl = "<%=GetterUtil.getString(PropsUtil.get("com.nps.dsc.api.domain"), "https://dsc.npstrust.net")%>";
 var SDWebServerAuthTokenByUserPortalUrl = "/o/dsc/getAuthToken";
 var sdWebServerUrl = "<%=GetterUtil.getString(PropsUtil.get("com.nps.dsc.api.domain"), "https://dsc.npstrust.net")%>";
@@ -1817,7 +1817,7 @@ $(function(){
 			//$("#submit").click();
 		})
 	})
-}) --%>
+}) 
 $( ".x-mark" ).click(function() {
 		$("#success-modal").addClass("hide");
 		
